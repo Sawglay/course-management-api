@@ -45,3 +45,14 @@ Dependency versions will be selected and recorded when implementation begins.
 - [ ] Add liveness and database readiness endpoints.
 - [ ] Document and test the API.
 
+### Phase 2 — Users and Enrollment
+
+- [ ] Add registration and login with hashed passwords.
+- [ ] Add token authentication and admin/student permissions.
+- [ ] Restrict course and department changes to administrators.
+- [ ] Allow students to enroll, view their enrollments, and withdraw.
+- [ ] Prevent duplicate enrollments and enrollment beyond course capacity.
+- [ ] Enforce ownership checks for student enrollment records.
+
+The initial catalog is intended for local development. Authentication and authorization are required before exposing administrative operations publicly.
+
