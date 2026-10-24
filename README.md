@@ -13,3 +13,19 @@ The project aims to demonstrate practical backend development: API design, relat
 - Enforce data integrity through validation and database constraints.
 - Extend the catalog with authentication and student enrollment.
 - Maintain a repository that is easy to understand, run, and test.
+
+## Technology Stack
+
+| Area | Technology | Purpose |
+| --- | --- | --- |
+| Language | Python | Application and business logic |
+| API framework | FastAPI | HTTP routes and API documentation |
+| Validation | Pydantic | Request and response schemas |
+| Database | PostgreSQL | Relational data storage |
+| ORM | SQLAlchemy | Database models and queries |
+| Migrations | Alembic | Versioned database schema changes |
+| Testing | pytest | Unit and integration tests |
+| Environment | Docker Compose | Local API and database services |
+| Automation | GitHub Actions | Automated checks on pushes and pull requests |
+
+Dependency versions will be selected and recorded when implementation begins.
