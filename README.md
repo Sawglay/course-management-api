@@ -29,3 +29,19 @@ The project aims to demonstrate practical backend development: API design, relat
 | Automation | GitHub Actions | Automated checks on pushes and pull requests |
 
 Dependency versions will be selected and recorded when implementation begins.
+
+
+## Planned Features
+
+### Phase 1 — Course Catalog
+
+- [ ] Create, list, retrieve, update, and delete courses.
+- [ ] Create and list departments.
+- [ ] Search courses by title and filter by department.
+- [ ] Paginate course lists with predictable ordering.
+- [ ] Validate course fields and department references.
+- [ ] Reject duplicate course IDs.
+- [ ] Provide consistent application error responses.
+- [ ] Add liveness and database readiness endpoints.
+- [ ] Document and test the API.
+
