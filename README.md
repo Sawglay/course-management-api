@@ -101,4 +101,25 @@ Phase 2 will introduce:
 
 Registration will not allow clients to assign themselves an administrator role.
 
+## Example API Contract
+
+The examples below describe the planned behavior.
+
+### Create a Course
+
+`POST /courses`
+
+```json
+{
+  "id": "CS-101",
+  "title": "Introduction to Programming",
+  "description": "Programming fundamentals using Python.",
+  "credits": 3,
+  "department_id": 1,
+  "capacity": 40
+}
+```
+
+Assuming department `1` exists, the API will return `201 Created` with the stored course fields and a `Location: /courses/CS-101` header.
+
 
