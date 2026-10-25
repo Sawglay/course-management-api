@@ -56,3 +56,17 @@ Dependency versions will be selected and recorded when implementation begins.
 
 The initial catalog is intended for local development. Authentication and authorization are required before exposing administrative operations publicly.
 
+## Planned Data Model
+
+| Entity | Main fields | Relationships |
+| --- | --- | --- |
+| Department | `id`, `name` | One department has many courses |
+| Course | `id`, `title`, `description`, `credits`, `department_id`, `capacity` | Belongs to one department; has many enrollments |
+| User | `id`, `name`, `email`, `password_hash`, `role` | A student has many enrollments |
+| Enrollment | `id`, `student_id`, `course_id`, `enrolled_at` | Connects a student to a course |
+
+Course IDs are unique strings such as `CS-101`. User email addresses are unique, and each student/course pair may appear only once in the enrollment table.
+
+For the first version, each course has one enrollment pool. Semesters, sections, schedules, and prerequisites are outside the initial scope.
+
+
