@@ -170,3 +170,15 @@ For a missing course, return `404 Not Found`:
 
 Application errors will use the envelope above. Request validation errors will retain FastAPI's standard `detail` response structure.
 
+
+## Business Rules
+
+- Course IDs are immutable; course IDs and titles must not be blank.
+- Credits and capacity must be positive integers.
+- Every course must reference an existing department.
+- A course with enrollments cannot be deleted.
+- Capacity cannot be reduced below the current enrollment count.
+- Enrollment requires a student account and an existing course with space available.
+- Duplicate enrollment must be prevented with a database uniqueness constraint.
+- Capacity checks and enrollment writes must be performed atomically to prevent concurrent requests from overbooking a course.
+
