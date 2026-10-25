@@ -182,3 +182,27 @@ Application errors will use the envelope above. Request validation errors will r
 - Duplicate enrollment must be prevented with a database uniqueness constraint.
 - Capacity checks and enrollment writes must be performed atomically to prevent concurrent requests from overbooking a course.
 
+
+## Planned Project Structure
+
+| Path | Responsibility |
+| --- | --- |
+| `app/main.py` | Application entry point and router registration |
+| `app/core/` | Configuration, logging, and security utilities |
+| `app/database/` | Database engine and session management |
+| `app/models/` | SQLAlchemy database models |
+| `app/schemas/` | Pydantic request and response schemas |
+| `app/routes/` | HTTP endpoints |
+| `app/services/` | Business rules and transaction coordination |
+| `app/repositories/` | Database queries and persistence |
+| `app/exceptions/` | Application exceptions and response handlers |
+| `migrations/` | Alembic migration scripts |
+| `tests/` | Unit and integration tests |
+| `.github/workflows/` | GitHub Actions workflows |
+| `.env.example` | Documented configuration placeholders |
+| `pyproject.toml` | Project metadata and dependencies |
+| `Dockerfile` | API container definition |
+| `compose.yaml` | Local API and PostgreSQL services |
+
+Routes will handle HTTP concerns, services will enforce business rules, and repositories will handle database operations. Services will own transactions that span multiple operations.
+
