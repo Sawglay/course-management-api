@@ -70,3 +70,35 @@ Course IDs are unique strings such as `CS-101`. User email addresses are unique,
 For the first version, each course has one enrollment pool. Semesters, sections, schedules, and prerequisites are outside the initial scope.
 
 
+## Proposed API Routes
+
+The initial API uses `/courses` and `/departments` as its resource paths.
+
+| Method | Endpoint | Purpose | Success |
+| --- | --- | --- | --- |
+| GET | `/health/live` | Check that the application is running | `200` |
+| GET | `/health/ready` | Check database readiness | `200` |
+| GET | `/courses` | List, search, and filter courses | `200` |
+| GET | `/courses/{course_id}` | Retrieve one course | `200` |
+| POST | `/courses` | Create a course | `201` |
+| PATCH | `/courses/{course_id}` | Update selected course fields | `200` |
+| DELETE | `/courses/{course_id}` | Delete a course without enrollments | `204` |
+| GET | `/departments` | List departments | `200` |
+| POST | `/departments` | Create a department | `201` |
+
+Planned course list parameters: `search`, `department_id`, `limit` (default `20`, maximum `100`), and `offset` (default `0`). Results will be ordered by course ID.
+
+Phase 2 will introduce:
+
+| Method | Endpoint | Purpose |
+| --- | --- | --- |
+| POST | `/auth/register` | Register a student account |
+| POST | `/auth/login` | Authenticate and receive an access token |
+| GET | `/users/me` | Retrieve the current user's profile |
+| POST | `/courses/{course_id}/enrollments` | Enroll the current student |
+| GET | `/users/me/enrollments` | List the current student's enrollments |
+| DELETE | `/courses/{course_id}/enrollments/me` | Withdraw the current student |
+
+Registration will not allow clients to assign themselves an administrator role.
+
+
