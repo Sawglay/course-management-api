@@ -123,3 +123,50 @@ The examples below describe the planned behavior.
 Assuming department `1` exists, the API will return `201 Created` with the stored course fields and a `Location: /courses/CS-101` header.
 
 
+### List Courses
+
+`GET /courses?department_id=1&limit=20&offset=0`
+
+```json
+{
+  "items": [
+    {
+      "id": "CS-101",
+      "title": "Introduction to Programming",
+      "description": "Programming fundamentals using Python.",
+      "credits": 3,
+      "department_id": 1,
+      "capacity": 40
+    }
+  ],
+  "total": 1,
+  "limit": 20,
+  "offset": 0
+}
+```
+
+### Application Error
+
+For a missing course, return `404 Not Found`:
+
+```json
+{
+  "error": {
+    "code": "COURSE_NOT_FOUND",
+    "message": "Course CS-999 was not found."
+  }
+}
+```
+
+| Status | Intended use |
+| --- | --- |
+| `401 Unauthorized` | Missing or invalid authentication in Phase 2 |
+| `403 Forbidden` | Authenticated user lacks permission |
+| `404 Not Found` | Requested resource does not exist |
+| `409 Conflict` | Duplicate record, full course, or deletion blocked by enrollments |
+| `422 Unprocessable Entity` | Invalid fields or nonexistent department reference |
+| `500 Internal Server Error` | Unexpected server failure; no internal details returned |
+| `503 Service Unavailable` | Database readiness check fails |
+
+Application errors will use the envelope above. Request validation errors will retain FastAPI's standard `detail` response structure.
+
