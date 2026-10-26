@@ -220,3 +220,16 @@ The planned local API address is `http://127.0.0.1:8000`, with Swagger UI at `/d
 
 Configuration will be supplied through environment variables. Real credentials and `.env` files must not be committed. Exact commands and supported runtime versions will be documented after verification.
 
+## Testing Plan
+
+- Course creation, retrieval, listing, partial updates, and deletion.
+- Missing resources, invalid fields, duplicate IDs, and invalid department references.
+- Search, filtering, pagination, and response schemas.
+- Database constraints and migration behavior against a separate test database.
+- Liveness and readiness behavior when the database is unavailable.
+- Authentication, role checks, and enrollment ownership in Phase 2.
+- Duplicate enrollment, full capacity, and concurrent enrollment requests.
+
+GitHub Actions will run automated checks on pushes and pull requests. Test results and coverage will be reported only after the test suite exists and runs successfully.
+
+
