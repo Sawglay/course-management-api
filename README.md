@@ -243,3 +243,9 @@ GitHub Actions will run automated checks on pushes and pull requests. Test resul
 6. Implement enrollment transactions and concurrency tests.
 7. Verify setup instructions and prepare a deployment guide.
 
+## Author
+
+**Hlaing Min Han (G Lay)**
+
+A backend portfolio project focused on clear API design, maintainable code, and reliable data handling.
+
