@@ -206,3 +206,17 @@ Application errors will use the envelope above. Request validation errors will r
 
 Routes will handle HTTP concerns, services will enforce business rules, and repositories will handle database operations. Services will own transactions that span multiple operations.
 
+## Development Setup
+
+Runnable setup instructions will be added when the application, dependency configuration, migrations, and container files exist. The intended workflow is:
+
+1. Clone the repository.
+2. Copy `.env.example` to `.env` and configure the local database.
+3. Build and start the PostgreSQL and API services.
+4. Apply Alembic migrations and seed sample departments.
+5. Open the interactive API documentation and run the tests.
+
+The planned local API address is `http://127.0.0.1:8000`, with Swagger UI at `/docs` and ReDoc at `/redoc`.
+
+Configuration will be supplied through environment variables. Real credentials and `.env` files must not be committed. Exact commands and supported runtime versions will be documented after verification.
+
