@@ -233,3 +233,13 @@ Configuration will be supplied through environment variables. Real credentials a
 GitHub Actions will run automated checks on pushes and pull requests. Test results and coverage will be reported only after the test suite exists and runs successfully.
 
 
+## Development Roadmap
+
+1. Initialize the application, configuration, dependencies, and Docker environment.
+2. Define department and course models with the first database migration.
+3. Implement course CRUD, validation, and error handling.
+4. Add search, pagination, health checks, tests, and CI.
+5. Add authentication and administrator/student permissions.
+6. Implement enrollment transactions and concurrency tests.
+7. Verify setup instructions and prepare a deployment guide.
+
